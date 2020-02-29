@@ -1,8 +1,14 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#  React Burger Builder
 
-## Available Scripts
+Single page app build with create-react-app
 
-In the project directory, you can run:
+## Used technologies
+- React
+- Sass
+- Axios
+- Firebase
+- ... more to come
+## Run
 
 ### `yarn start`
 
