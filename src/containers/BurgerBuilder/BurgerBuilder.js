@@ -23,7 +23,7 @@ class BurgerBuilder extends Component {
         purchasable: false,
         purchasing: false,
         loading: false,
-        error: false
+        error: false,
     };
 
     componentDidMount() {
@@ -33,8 +33,10 @@ class BurgerBuilder extends Component {
             })
             .catch(error => {
                 this.setState({error: true})
-            })
+            });
     }
+
+
 
     updatePurchaseState (ingredients) {
         const sum = Object.keys(ingredients)
@@ -139,6 +141,7 @@ class BurgerBuilder extends Component {
                         purchasable={this.state.purchasable}
                         price={this.state.totalPrice}
                         ordered={this.purchaseHandler}
+                        scrolled={this.state.scrolled}
                     />
                 </Aux>
             );

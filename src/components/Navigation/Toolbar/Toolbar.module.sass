@@ -4,12 +4,16 @@
   position: fixed
   top: 0
   left: 0
-  background-color: #703B09
+  background-color: #ffffff
+  border-bottom: 1px solid #e1e1e1
   display: flex
   justify-content: space-between
   align-items: center
   padding: 0 20px
   box-sizing: border-box
+  box-shadow: none
+  transition: .3s ease-in-out
+  z-index: 5
   nav
     height: 100%
   .Logo
@@ -17,3 +21,5 @@
   .DesktopOnly
     @media (max-width: 499px)
       display: none
+  &.Scrolled
+    box-shadow: 0 0 22px 2px rgba(0, 0, 0, 0.2)
