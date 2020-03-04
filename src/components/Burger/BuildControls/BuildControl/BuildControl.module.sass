@@ -1,42 +1,49 @@
 .BuildControl
   display: flex
-  justify-content: space-between
+  justify-content: center
   align-items: center
   margin: 5px 0
   button
     display: block
     font: inherit
-    padding: 5px
-    margin: 0 5px
-    width: 80px
-    border: 1px solid #AA6817
+    height: 41px
+    margin: 0
+    width: 45px
+    border: 1px solid #cdcdcd
     cursor: pointer
     outline: none
+    background-color: white
+    transition: .3s ease-in-out
+    svg
+      path
+        transition: .3s ease-in-out
+        fill: #cdcdcd
+    &:hover, &:active
+      svg
+        path
+          fill: black
     &:disabled
-      background-color: #AC9980
-      border: 1px solid #7E7365
-      color: #ccc
+      background-color: #b9b9b9
       cursor: default
+      svg
+        path
+          fill: white
 
       &:hover:disabled
-        background-color: #AC9980
-        color: #ccc
+        background-color: #a5a5a5
         cursor: not-allowed
 
   .Label
     padding: 10px
     font-weight: bold
+    background: white
     width: 80px
+    font-size: 16px
+    text-align: center
+    border-top: 1px solid #cdcdcd
+    border-bottom: 1px solid #cdcdcd
   .Less
-    background-color: #D39952
-    color: white
-    &:hover, &:active
-      background-color: #DAA972
-      color: white
+    border-radius: 35% 0 0 35%
 
   .More
-    background-color: #8F5E1E
-    color: white
-    &:hover, &:active
-      background-color: #99703F
-      color: white
+    border-radius: 0 35% 35% 0
