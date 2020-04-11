@@ -83,5 +83,19 @@ export const fetchOrders = () => {
             });
     }
 
+};
+
+export const deleteOrder = (deletedId) => {
+    return dispatch =>{
+        console.log(deletedId);
+        axios.delete(`orders/${deletedId}.json`)
+            .then(response => {
+                console.log(response.data);
+                dispatch(fetchOrders());
+            })
+            .catch(error => {
+                console.log(error)
+            }); //endin
+    }
 }
 

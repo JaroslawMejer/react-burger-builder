@@ -31,6 +31,7 @@ const order = (props) => {
             <p>
                 Price: <strong>USD {Number.parseFloat(props.price).toFixed(2)}</strong>
             </p>
+            <button onClick={props.delete} className={classes.Close}>X</button>
         </div>
     )
 };

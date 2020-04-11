@@ -5,6 +5,7 @@ import Order from '../../components/Order/Order'
 import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 import * as actions from '../../store/actions';
 import Spinner from '../../components/UI/Spinner/Spinner'
+import {purchaseBurgerFail, purchaseBurgerSuccess} from "../../store/actions/order";
 
 
 class Orders extends Component {
@@ -13,6 +14,7 @@ class Orders extends Component {
         this.props.onFetchOrders();
     }
 
+
     render() {
         let orders = <Spinner/>;
         if(!this.props.loading) {
@@ -20,7 +22,9 @@ class Orders extends Component {
                 <Order
                     ingredients={order.ingredients}
                     price={order.price}
-                    key={order.id} />
+                    key={order.id}
+                    delete={ () => this.props.onDeleteOrder(order.id)}
+                />
             ))
         }
         return(
@@ -40,7 +44,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onFetchOrders: () => dispatch(actions.fetchOrders())
+        onFetchOrders: () => dispatch(actions.fetchOrders()),
+        onDeleteOrder: (passedId) => dispatch(actions.deleteOrder(passedId))
     }
 }
 
