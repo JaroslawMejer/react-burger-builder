@@ -112,7 +112,7 @@ class ContactData extends  Component {
             isValid = value.length >= rules.minLength && isValid;
         }
 
-        if (rules.minLength) {
+        if (rules.maxLength) {
             isValid = value.length <= rules.maxLength && isValid;
         }
 
