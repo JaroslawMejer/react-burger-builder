@@ -106,6 +106,7 @@ const mapStateToProps = state => {
         prc: state.burgerBuilder.totalPrice,
         error: state.burgerBuilder.error,
         isAuthenticated: state.auth.token !== null,
+        isBuilding: state.burgerBuilder.building
     }
 };
 
