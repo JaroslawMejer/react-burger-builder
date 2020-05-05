@@ -5,7 +5,6 @@ import Order from '../../components/Order/Order'
 import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 import * as actions from '../../store/actions';
 import Spinner from '../../components/UI/Spinner/Spinner'
-import {purchaseBurgerFail, purchaseBurgerSuccess} from "../../store/actions/order";
 
 
 class Orders extends Component {

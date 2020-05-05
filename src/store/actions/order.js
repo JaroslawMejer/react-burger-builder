@@ -23,12 +23,12 @@ export const purchaseBurgerStart = () => {
 }
 
 export const purchaseBurger = (orderData, token) => {
-    console.log(orderData);
+    //console.log(orderData);
     return dispatch => {
         dispatch(purchaseBurgerStart());
         axios.post('/orders.json?auth=' + token, orderData)
             .then(response => {
-                console.log(response.data);
+                //console.log(response.data);
                  dispatch(purchaseBurgerSuccess(response.data.name, orderData))
             })
             .catch(error => {
@@ -76,7 +76,7 @@ export const fetchOrders = (token, userId) => {
                         id: key
                     });
                 }
-                console.log(fetchedOrders);
+                //console.log(fetchedOrders);
                 dispatch(fetchOrdersSuccess(fetchedOrders));
             })
             .catch(err =>{
@@ -88,14 +88,14 @@ export const fetchOrders = (token, userId) => {
 
 export const deleteOrder = (deletedId) => {
     return dispatch =>{
-        console.log(deletedId);
+        //console.log(deletedId);
         axios.delete(`orders/${deletedId}.json`)
             .then(response => {
-                console.log(response.data);
+                //console.log(response.data);
                 dispatch(fetchOrders());
             })
             .catch(error => {
-                console.log(error)
+                //console.log(error)
             }); //endin
     }
 }
